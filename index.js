@@ -331,6 +331,9 @@ app.delete('/api/ticket-types/:id', authenticateAdmin, async (req, res) => {
     }
 });
 
+
+app.get('/ping', (req, res) => res.send('pong'));
+
 app.get('/', (req, res) => res.send('LuxeMuseum Razorpay API is running...'));
 
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
