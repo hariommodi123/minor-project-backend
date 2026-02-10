@@ -17,7 +17,7 @@ const razorpay = new Razorpay({
 
 // Middleware
 app.use(cors({
-    origin: ['https://minor-project-backend-i1ci.onrender.com', 'http://localhost:5173', 'http://localhost:3000'],
+    origin: ['https://minor-project-backend-i1ci.onrender.com', 'http://localhost:5173', 'http://localhost:3000', 'https://minorproject.easykit.in'],
     credentials: true
 }));
 app.use(bodyParser.json());
@@ -334,4 +334,3 @@ app.delete('/api/ticket-types/:id', authenticateAdmin, async (req, res) => {
 app.get('/', (req, res) => res.send('LuxeMuseum Razorpay API is running...'));
 
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
-
