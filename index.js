@@ -23,7 +23,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // MongoDB Connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/museum_booking';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/museum_booking';
 mongoose.connect(MONGO_URI)
     .then(async () => {
         console.log('✅ Connected to MongoDB');
@@ -334,3 +334,4 @@ app.delete('/api/ticket-types/:id', authenticateAdmin, async (req, res) => {
 app.get('/', (req, res) => res.send('LuxeMuseum Razorpay API is running...'));
 
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+
